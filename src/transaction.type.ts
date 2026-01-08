@@ -1,6 +1,5 @@
 import z from "zod";
-import { CreateTransactionSchema } from "./transaction.schema";
-import { UpdateItemSchema } from "./inventory.schema";
+import { CreateTransactionSchema, UpdateTransactionSchema } from "./transaction.schema";
 
 export type Transaction = {
   id: string;
@@ -10,4 +9,4 @@ export type Transaction = {
 };
 
 export type CreateTransaction = z.infer<typeof CreateTransactionSchema>;
-export type UpdateTransaction = z.infer<typeof UpdateItemSchema>;
+export type UpdateTransaction = z.infer<typeof UpdateTransactionSchema>;
