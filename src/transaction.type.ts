@@ -5,8 +5,8 @@ import {
 } from "./transaction.schema";
 
 enum TransactionType {
-  "In",
-  "Out",
+  In = "In",
+  Out = "Out",
 }
 
 export type Transaction = {
