@@ -1,9 +1,17 @@
 import z from "zod";
-import { CreateTransactionSchema, UpdateTransactionSchema } from "./transaction.schema";
+import {
+  CreateTransactionSchema,
+  UpdateTransactionSchema,
+} from "./transaction.schema";
+
+enum TransactionType {
+  "In",
+  "Out",
+}
 
 export type Transaction = {
   id: string;
-  type: string;
+  type: TransactionType;
   quantity: string;
   itemId: string;
 };
