@@ -18,3 +18,8 @@ export type Transaction = {
 
 export type CreateTransaction = z.infer<typeof CreateTransactionSchema>;
 export type UpdateTransaction = z.infer<typeof UpdateTransactionSchema>;
+
+export type UpdateTransactionRequest = {
+  id?: string;
+  transaction: UpdateTransaction;
+};
