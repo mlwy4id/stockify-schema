@@ -3,6 +3,7 @@ import { CreateTransactionSchema } from "./transaction.schema";
 import { UpdateItemSchema } from "./inventory.schema";
 
 export type Transaction = {
+  id: string;
   type: string;
   quantity: string;
   itemId: string;
