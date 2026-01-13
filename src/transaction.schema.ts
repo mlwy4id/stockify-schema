@@ -12,7 +12,11 @@ export const CreateTransactionSchema = z
   })
   .strict();
 
-export const UpdateTransactionSchema = CreateTransactionSchema.partial().refine(
+const UpdateTransaction = CreateTransactionSchema.extend({
+  previousItemId: z.string().min(1, "Please provide previous item ID"),
+});
+
+export const UpdateTransactionSchema = UpdateTransaction.partial().refine(
   (data) => Object.keys(data).length > 0,
   "At least one field must be updated"
 );
