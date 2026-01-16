@@ -3,9 +3,9 @@ import z from "zod";
 export const CreateItemSchema = z
   .object({
     name: z.string().min(1, "Please provide item name!"),
-    initQuantity: z
-      .number("Provide only number for quantity!")
-      .min(0, "Please provide non-negative number for quantity!"),
+    initStock: z
+      .number("Provide only number for stock!")
+      .min(0, "Please provide non-negative number for stock!"),
   })
   .strict();
 
