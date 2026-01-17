@@ -1,10 +1,10 @@
 import z from "zod";
 
-const Type = ["In", "Out"] as const;
+const Action = ["Restock", "Sold"] as const;
 
 export const CreateTransactionSchema = z
   .object({
-    type: z.enum(Type),
+    action: z.enum(Action),
     quantity: z
       .number()
       .min(0, "Please provide non-negative number for quantity"),
@@ -18,5 +18,5 @@ const UpdateTransaction = CreateTransactionSchema.extend({
 
 export const UpdateTransactionSchema = UpdateTransaction.partial().refine(
   (data) => Object.keys(data).length > 0,
-  "At least one field must be updated"
+  "At least one field must be updated",
 );
