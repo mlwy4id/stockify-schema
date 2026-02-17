@@ -10,7 +10,7 @@ export const CreateItemSchema = z
   })
   .strict();
 
-export const UpdateItemSchema = CreateItemSchema.partial().refine(
+export const UpdateItemSchema = CreateItemSchema.refine(
   (data) => Object.keys(data).length > 0,
   "At least one field must be updated",
 );
